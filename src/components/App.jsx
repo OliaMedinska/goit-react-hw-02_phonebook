@@ -62,10 +62,14 @@ return (
             value={this.state.filter}
             onChange={this.changeFilter}>
         </Filter>
+{this.getVisibleContacts().length !== 0 
+  ? 
         <Contact 
             contactList={this.getVisibleContacts()}
             handleDeleteContact={this.deleteContact}> 
-        </Contact>
+        </Contact> 
+  :
+     <p className="heading">No contacts</p>}
       </div>
     )
   }
